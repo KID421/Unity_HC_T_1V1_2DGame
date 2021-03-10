@@ -155,6 +155,7 @@ MonoBehaviour:
   posMin: {x: -8, y: -4}
   posMax: {x: 8, y: 4}
   count: 3
+  intervalFirst: 0.05
   needSpawn: 1
   currentCount: 0
 --- !u!4 &683675613
@@ -170,6 +171,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1114168201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114168203}
+  - component: {fileID: 1114168202}
+  m_Layer: 0
+  m_Name: "\u751F\u6210\u7BA1\u7406\u5668\uFF1A\u539F\u4F4F\u6C11"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1114168202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114168201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ce31f72418a9c41a509345fc2ce224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.05
+  obj: {fileID: 5702519147337866444, guid: 49eea3f38fa761849920c42a6ef8c780, type: 3}
+  posMin: {x: -8, y: -4}
+  posMax: {x: 8, y: 4}
+  count: 1
+  intervalFirst: 0.05
+  needSpawn: 0
+  currentCount: 0
+--- !u!4 &1114168203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114168201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178247823
 GameObject:
@@ -200,11 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ce31f72418a9c41a509345fc2ce224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 1
+  interval: 0.05
   obj: {fileID: 2337937542725813800, guid: 22e5787c35fa80643ad52a69583ebc10, type: 3}
   posMin: {x: -8, y: -4}
   posMax: {x: 8, y: 4}
   count: 2
+  intervalFirst: 0.05
   needSpawn: 0
   currentCount: 0
 --- !u!4 &1178247825

@@ -22,6 +22,8 @@ public class SpawnManager : MonoBehaviour
 
     [Header("第一次生成的數量")]
     public int count;
+    [Header("第一次生成的間隔")]
+    public float intervalFirst = 0.05f;
 
     [Header("是否需要間隔生成")]
     public bool needSpawn;
@@ -32,14 +34,8 @@ public class SpawnManager : MonoBehaviour
     // 開始：播放時執行一次
     private void Start()
     {
-        // 第一次生成
-        for (int i = 0; i < count; i++)
-        {
-            Spawn();
-        }
-
-        // 如果 需要間隔生成 重複呼叫("函式名稱"，開始時間，間隔時間)
-        if (needSpawn) InvokeRepeating("Spawn", interval, interval);
+        // 重複呼叫("函式名稱"，開始時間，間隔時間)
+        InvokeRepeating("Spawn", 0, intervalFirst);
     }
 
     // 函式 - 包含程式區塊
@@ -57,5 +53,14 @@ public class SpawnManager : MonoBehaviour
         // 生成(物件，座標，角度)
         // 零角度 Quaternion.identity
         Instantiate(obj, new Vector2(x, y), Quaternion.identity);
+
+        // 如果 目前數量 等於 第一次生成數量
+        if (currentCount == count)
+        {
+            // 停止
+            CancelInvoke();
+            // 如果 需要持續生成 就 重複呼叫("函式名稱"，開始時間，間隔時間)
+            if (needSpawn) InvokeRepeating("Spawn", interval, interval);
+        }
     }
 }
