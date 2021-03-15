@@ -32,10 +32,12 @@ public class BaseAnimal : MonoBehaviour
     /// </summary>
     private bool isEating;
 
+    // protected 保護 - 允許子類別存取
+    // virtual 虛擬 - 允許以類別複寫 override
     /// <summary>
     /// 搜尋所有目標
     /// </summary>
-    private void FindTarget()
+    protected virtual void FindTarget()
     {
         // 目標物件陣列 = 遊戲物件.透過標籤尋找物件(目標名稱)
         targets = GameObject.FindGameObjectsWithTag(targetName);
@@ -46,7 +48,7 @@ public class BaseAnimal : MonoBehaviour
     /// <summary>
     /// 搜尋最靠近的目標
     /// </summary>
-    private void FindNearTarget()
+    protected void FindNearTarget()
     {
         // 如果 目標物件 的 數量 為零 就 跳出
         if (targets.Length == 0) return;

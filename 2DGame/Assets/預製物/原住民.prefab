@@ -115,10 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34418d1dd38d224aaf08d7c166bc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   lifetime: 3
   eatTime: 1
   eatCount: 3
   targetName: "\u9752\u86D9"
   targets: []
   targetDistances: []
+  goodEyes: 1

@@ -115,10 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a157a245eb6b045ac416f504b7addc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   lifetime: 3
   eatTime: 1
   eatCount: 3
   targetName: "\u860B\u679C"
   targets: []
   targetDistances: []
+  haveColor: 1
