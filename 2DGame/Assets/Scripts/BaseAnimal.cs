@@ -31,6 +31,10 @@ public class BaseAnimal : MonoBehaviour
     /// 是否正在吃東西
     /// </summary>
     private bool isEating;
+    /// <summary>
+    /// 原始標籤
+    /// </summary>
+    private string tagOriginal;
 
     // protected 保護 - 允許子類別存取
     // virtual 虛擬 - 允許以類別複寫 override
@@ -68,10 +72,10 @@ public class BaseAnimal : MonoBehaviour
 
         // 取得最靠近的目標
         float min = targetDistances.Min();
-        print("最近的距離：" + min);
+        //print("最近的距離：" + min);
 
         int index = targetDistances.IndexOf(min);
-        print("最近的距離目標編號：" + index);
+        //print("最近的距離目標編號：" + index);
 
         // 取得目前最近的目標物件
         target = targets[index].transform;
@@ -146,7 +150,9 @@ public class BaseAnimal : MonoBehaviour
         Vector2 pos = transform.position;
         pos.x += Random.Range(-2f, 2f);
         // 生成下一隻
-        Instantiate(gameObject, pos, Quaternion.identity);
+        GameObject temp = Instantiate(gameObject, pos, Quaternion.identity);
+        // 生成物件 的 標籤 = 原始標籤
+        temp.tag = tagOriginal;
     }
 
     /// <summary>
@@ -154,11 +160,16 @@ public class BaseAnimal : MonoBehaviour
     /// </summary>
     private void Dead()
     {
+        // 如果 目標物存在 就將目標物 的 標籤 恢復
+        if (target) target.tag = targetName;
         Destroy(gameObject);
     }
 
     private void Start()
     {
+        // 原始標籤 等於 遊戲一開始的標籤
+        tagOriginal = tag;
+
         FindTarget();
 
         // 延遲呼叫("死亡"，生命)
@@ -174,5 +185,12 @@ public class BaseAnimal : MonoBehaviour
         if (!target) FindTarget();
 
         Track();
+    }
+
+    // 刪除事件：此物件被刪除時會執行一次
+    private void OnDestroy()
+    {
+        // 如果 目標物存在 就將目標物 的 標籤 恢復
+        if (target) target.tag = targetName;
     }
 }

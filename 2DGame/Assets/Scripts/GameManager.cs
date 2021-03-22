@@ -5,26 +5,27 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // 蘋果第一次生成與間隔
-    public int appleFirst;
-    public float appleInterval;
+    // static 靜態 可以在其他腳本以 類別.靜態資料 存取
+    public static int appleFirst;
+    public static float appleInterval;
 
     // 青蛙 沒有保護色 數量、生命與生成
-    public int frogNoColor;
+    public static int frogNoColor;
     public float frogNoColorLife;
     public int frogNoColorEat;
 
     // 青蛙 擁有保護色 數量、生命與生成
-    public int frogHaveColor;
+    public static int frogHaveColor;
     public float frogHaveColorLife;
     public int frogHaveColorEat;
 
     // 原住民 視力良好 數量、生命與生成
-    public int aboiginalGoodEye;
+    public static int aboiginalGoodEye;
     public float aboiginalGoodEyeLife;
     public int aboiginalGoodEyeEat;
 
     // 原住民 視力不好 數量、生命與生成
-    public int aboiginalBadEye;
+    public static int aboiginalBadEye;
     public float aboiginalBadEyeLife;
     public int aboiginalBadEyeEat;
 
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void AppleInterval(string getValue)
     {
-        appleInterval = Int32.Parse(getValue);
+        appleInterval = Single.Parse(getValue);
     }
 
     public void FrogNoColor(string getValue)
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void FrogNoColorLife(string getValue)
     {
-        frogNoColorLife = Int32.Parse(getValue);
+        frogNoColorLife = Single.Parse(getValue);
         objFrogNoColor.lifetime = frogNoColorLife;                  // 更新 沒有保護色 生命
     }
 
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void FrogHaveColorLife(string getValue)
     {
-        frogHaveColorLife = Int32.Parse(getValue);
+        frogHaveColorLife = Single.Parse(getValue);
         objFrogHaveColor.lifetime = frogHaveColorLife;              // 更新 擁有保護色 生命
     }
 
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void AboiginalGoodEyeLife(string getValue)
     {
-        aboiginalGoodEyeLife = Int32.Parse(getValue);
+        aboiginalGoodEyeLife = Single.Parse(getValue);
         objAboriginalGoodEye.lifetime = aboiginalGoodEyeLife;       // 更新 視力良好 生命
     }
 
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void AboiginalBadEyeLife(string getValue)
     {
-        aboiginalBadEyeLife = Int32.Parse(getValue);
+        aboiginalBadEyeLife = Single.Parse(getValue);
         objAboriginalBadEye.lifetime = aboiginalBadEyeLife;         // 更新 視力不好 生命
     }
 
