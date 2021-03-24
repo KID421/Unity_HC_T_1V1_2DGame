@@ -18,7 +18,13 @@ public class BaseAnimal : MonoBehaviour
     public GameObject[] targets;
     [Header("目標物件的距離")]
     public List<float> targetDistances;
+    [Header("吃幾隻會死亡")]
+    public int countEatToDie;
 
+    /// <summary>
+    /// 總共吃幾隻，不會歸零
+    /// </summary>
+    private int countEatTotal;
     /// <summary>
     /// 要追蹤的目標
     /// </summary>
@@ -121,6 +127,12 @@ public class BaseAnimal : MonoBehaviour
 
         // 吃完後在判定是否生成
         Invoke("Spawn", eatTime);
+
+        // 總數遞增
+        countEatTotal++;
+
+        // 如果 吃東西總數 等於 吃幾個會死亡 就死亡
+        if (countEatTotal == countEatToDie) Dead();
     }
 
     /// <summary>

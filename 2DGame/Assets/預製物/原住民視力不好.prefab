@@ -122,4 +122,5 @@ MonoBehaviour:
   targetName: "\u9752\u86D9"
   targets: []
   targetDistances: []
+  countEatToDie: 10
   goodEyes: 0

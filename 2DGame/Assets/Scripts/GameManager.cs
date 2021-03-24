@@ -124,4 +124,33 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("遊戲場景");
     }
+
+    /// <summary>
+    /// 使用預設值開始遊戲
+    /// </summary>
+    public void UseDefaultPlay()
+    {
+        // 蘋果 第一次 與 間隔
+        appleFirst = 10;
+        appleInterval = 0.5f;
+        // 青蛙 沒有保護色 數量 生命 吃幾隻生成
+        frogNoColor = 5;
+        objFrogNoColor.lifetime = 3;
+        objFrogNoColor.eatCount = 3;
+        // 青蛙 擁有保護色 數量 生命 吃幾隻生成
+        frogHaveColor = 5;
+        objFrogHaveColor.lifetime = 3;
+        objFrogHaveColor.eatCount = 3;
+        // 原住民 視力良好 數量 生命 吃幾隻生成
+        aboiginalGoodEye = 1;
+        objAboriginalGoodEye.lifetime = 3;
+        objAboriginalGoodEye.eatCount = 10;
+        // 原住民 視力不好 數量 生命 吃幾隻生成
+        aboiginalBadEye = 1;
+        objAboriginalBadEye.lifetime = 3;
+        objAboriginalBadEye.eatCount = 10;
+
+        // 載入遊戲場景
+        LoadScene();
+    }
 }
