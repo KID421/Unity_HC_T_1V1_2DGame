@@ -122,5 +122,5 @@ MonoBehaviour:
   targetName: "\u860B\u679C"
   targets: []
   targetDistances: []
-  countEatToDie: 10000
+  countEatToDie: 100
   haveColor: 0

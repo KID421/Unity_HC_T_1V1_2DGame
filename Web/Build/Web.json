@@ -1,7 +1,7 @@
 {
 "companyName": "KID",
 "productName": "KID | 原住民、青蛙與蘋果的演化",
-"productVersion": "0.1",
+"productVersion": "1.1",
 "dataUrl": "Web.data.unityweb",
 "wasmCodeUrl": "Web.wasm.code.unityweb",
 "wasmFrameworkUrl": "Web.wasm.framework.unityweb",
