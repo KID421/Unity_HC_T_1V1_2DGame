@@ -13,21 +13,25 @@ public class GameManager : MonoBehaviour
     public static int frogNoColor;
     public float frogNoColorLife;
     public int frogNoColorEat;
+    public int frogNoColorEatDie;
 
     // 青蛙 擁有保護色 數量、生命與生成
     public static int frogHaveColor;
     public float frogHaveColorLife;
     public int frogHaveColorEat;
+    public int frogHaveColorEatDie;
 
     // 原住民 視力良好 數量、生命與生成
     public static int aboiginalGoodEye;
     public float aboiginalGoodEyeLife;
     public int aboiginalGoodEyeEat;
+    public int aboiginalGoodEyeEatDie;
 
     // 原住民 視力不好 數量、生命與生成
     public static int aboiginalBadEye;
     public float aboiginalBadEyeLife;
     public int aboiginalBadEyeEat;
+    public int aboiginalBadEyeEatDie;
 
     [Header("青蛙 擁有保護色")]
     public Frog objFrogHaveColor;
@@ -66,6 +70,12 @@ public class GameManager : MonoBehaviour
         objFrogNoColor.eatCount = frogNoColorEat;                   // 更新 沒有保護色 吃幾個
     }
 
+    public void FrogNoColorEatDie(string getValue)
+    {
+        frogNoColorEatDie = Int32.Parse(getValue);
+        objFrogNoColor.countEatToDie = frogNoColorEatDie;
+    }
+
     public void FrogHaveColor(string getValue)
     {
         frogHaveColor = Int32.Parse(getValue);
@@ -81,6 +91,12 @@ public class GameManager : MonoBehaviour
     {
         frogHaveColorEat = Int32.Parse(getValue);
         objFrogHaveColor.eatCount = frogHaveColorEat;               // 更新 擁有保護色 吃幾個
+    }
+
+    public void FrogHaveColorEatDie(string getValue)
+    {
+        frogHaveColorEatDie = Int32.Parse(getValue);
+        objFrogHaveColor.countEatToDie = frogHaveColorEatDie;
     }
 
     public void AboiginalGoodEye(string getValue)
